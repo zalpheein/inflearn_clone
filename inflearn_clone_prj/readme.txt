@@ -1,6 +1,32 @@
 
 
 
+# 저작권이 없는 무료 이미지 사이트
+https://www.unsplash.com
+
+
+# 한글입숨 - 한글 텍스트 생성기
+http://hangul.thefron.me/
+
+
+# 지정한 크기의 특정 또는 램덤 이미지를 가져오기
+사용법 - https://www.designlog.org/2512699
+https://picsum.photos/
+	https://picsum.photos/200/300
+	https://picsum.photos/200/300.jpg
+	https://picsum.photos/id/237/200/300
+	https://picsum.photos/200/300?grayscale
+	https://picsum.photos/200/300/?blur
+	https://picsum.photos/200/300/?blur=2
+	https://picsum.photos/id/870/200/300?grayscale&blur=2
+	https://picsum.photos/v2/list
+
+
+
+
+---------------------------------------------------------------------------------
+
+
 
 ## 가상 환경 생성
     conda create -n inflearn_clone python~=3.9
