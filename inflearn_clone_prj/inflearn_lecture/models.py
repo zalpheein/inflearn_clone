@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class myText(models.Model):
@@ -8,6 +10,9 @@ class myText(models.Model):
     title = models.CharField(max_length=200)
     content = models.CharField(max_length=200)
     img_url = models.CharField(max_length=200)
+
+    #board_text = RichTextField(null=True)
+    board_text = RichTextUploadingField(null=True)
 
     def __str__(self):
         return self.title

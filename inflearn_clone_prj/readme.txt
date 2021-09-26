@@ -8,6 +8,8 @@
 # 장고 패키지 설치
 django
 pylint
+django-ckeditor
+
 
 ## git 관리 폴더 생성
     "git clone 주소" 명령을 사용하여 git 관리 할 폴더 생성 
