@@ -1,0 +1,55 @@
+{% extends 'inflearn_lecture/base.html' %}
+
+{% block content %}
+
+    <style>
+        div {
+            float: left;
+        }
+
+        .left {
+            width: 30%;
+        }
+
+        .left ul li {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        .right {
+            width: 70%;
+
+        }
+
+    </style>
+
+
+    <div class="left">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+            <li>인기</li>
+            <li>추천</li>
+        </ul>
+    </div>
+
+    <div class="right">
+        <div class="row">
+            {% for text in texts %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{ text.img_url}}" alt="...">
+                            <div class="caption">
+                                <h3>{{ text.title}}</h3>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
