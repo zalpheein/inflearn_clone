@@ -14,6 +14,9 @@ class myText(models.Model):
     #board_text = RichTextField(null=True)
     board_text = RichTextUploadingField(null=True)
 
+    category = models.CharField(max_length=200, null=True)
+
+
     def __str__(self):
         return self.title
     
