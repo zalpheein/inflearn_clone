@@ -8,5 +8,12 @@
 </head>
 <body>
     여기는 홈.....
+    {{ texts }}
+
+    <p>
+        {% for text in texts %}
+            <p>{{ text.title }}</p>
+        {% endfor %}
+    </p>
 </body>
 </html>
