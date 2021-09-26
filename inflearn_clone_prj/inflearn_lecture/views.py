@@ -11,6 +11,11 @@ def home_list(request):
 
 def lecture_list(request):
     texts = myText.objects.filter()
+
+    hot_lecture = myText.objects.filter(category='인기')
+
+
     return render(request, 'inflearn_lecture/lecture_list.html', {
-        'texts':texts
+        'texts':texts,
+        'hot_lecture':hot_lecture,
     })

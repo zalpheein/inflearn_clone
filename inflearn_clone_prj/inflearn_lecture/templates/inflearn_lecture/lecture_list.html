@@ -30,13 +30,13 @@
             <li>HTML</li>
             <li>CSS</li>
             <li>JS</li>
-            <li>인기</li>
+            <li id="hot_lecture">인기</li>
             <li>추천</li>
         </ul>
     </div>
 
     <div class="right">
-        <div class="row">
+        <div class="row all">
             {% for text in texts %}
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
@@ -50,6 +50,28 @@
                     </div>
             {% endfor %}
         </div>
+
+        <div class="row hot">
+            {% for text in hot_lecture %}
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{ text.img_url}}" alt="...">
+                            <div class="caption">
+                                <h3>{{ text.title}}</h3>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+            {% endfor %}
+        </div>
     </div>
+
+    <script>
+        $('#hot_lecture').click( function() {
+            $('.row').hide();
+            $('.hot').show();
+        });
+    </script>
 
 {% endblock %}
