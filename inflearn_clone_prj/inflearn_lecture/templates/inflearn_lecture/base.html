@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #main {
+            width: 100%;
+            height: 50vh;
+            background-image: url("https://cdn.inflearn.com/public/files/pages/395fa242-f56c-4a65-b512-09603c6527d9/[%EC%9D%B4%EB%B2%A4%ED%8A%B8]%EB%A9%94%EB%A1%9C%EB%B9%88%EC%A7%80%EC%96%B8_%EC%B6%94%EC%84%9D%EC%97%B0%EC%9E%A5_blog.gif");
+        }
+
+        nav {
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            line-height: 80px;
+        }
+
+        nav ul {
+            float: right;
+
+        }
+
+        nav ul li {
+            margin:10px;
+            list-style-type: none;
+            display: inline-block;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+    
+
+    <div id="main">
+        <nav>
+            <img src="https://cdn.inflearn.com/assets/brand/chuseok_logo.png" alt="" width="150px">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+                <li>메뉴5</li>
+            </ul>
+        </nav>
+    </div>
+
+    {% block content %}
+
+
+    {% endblock %}
+
+
+
+
+
+</body>
+</html>
