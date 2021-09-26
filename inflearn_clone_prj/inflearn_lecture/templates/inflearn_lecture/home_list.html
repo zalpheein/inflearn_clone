@@ -2,11 +2,15 @@
 
 {% block content %}
     여기는 홈.....
-    {{ texts }}
 
-    <p>
+    <h2>인기강의</h2>    
         {% for text in texts %}
+            <p><img src="{{ text.img_url }}" alt="" width="100"></p>
             <p>{{ text.title }}</p>
+            <br / >
         {% endfor %}
-    </p>
+
+
+
+
 {% endblock %}
