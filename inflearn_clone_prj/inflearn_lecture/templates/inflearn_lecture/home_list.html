@@ -8,10 +8,13 @@
         {% for text in texts %}
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
-                        <img src="{{ text.img_url}}" alt="...">
-                        <div class="caption">
-                            <h3>{{ text.title}}</h3>
-                        </div>
+                        <a href="{% url 'lecture_list_info' pk=text.pk %}">
+                            <img src="{{ text.img_url}}" alt="...">
+                            <div class="caption">
+                                <h3>{{ text.title}}</h3>
+                            </div>
+                            </a>
+
 
                     </div>
 
