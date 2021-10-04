@@ -52,6 +52,11 @@
                 <h2>rate : {{ comment.rate }}</h2>
                 <h2>writer : {{ comment.writer }}</h2>
                 <h2>comment : {{ comment.comment }}</h2>
+
+                <form method="POST" action="{% url 'comment_remove' pk=comment.pk %}">
+                    {% csrf_token %}
+                    <button>삭제하기</button>
+                </form>
             </div>
         {% endfor %}
     </div>

@@ -53,6 +53,14 @@ def lecture_list_info(request, pk):
 
 
 
+def comment_remove(request, pk):
+    
+    if request.method == "POST":
+        Comment.objects.get(pk=pk).delete()
+    
+    return redirect('/lecture_list')
+
+
 
 ## 로그인
 def login(request):

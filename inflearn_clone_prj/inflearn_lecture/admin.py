@@ -2,9 +2,13 @@ from django.contrib import admin
 from .models import myText, Comment
 
 
-class myTextadmn(admin.ModelAdmin):
+class myTextadmin(admin.ModelAdmin):
     list_display = ('pk', 'title')
 
-admin.site.register(myText, myTextadmn)
+admin.site.register(myText, myTextadmin)
 
-admin.site.register(Comment)
+
+class Commnetadmin(admin.ModelAdmin):
+    list_display = ('pk', 'comment')
+
+admin.site.register(Comment, Commnetadmin)
