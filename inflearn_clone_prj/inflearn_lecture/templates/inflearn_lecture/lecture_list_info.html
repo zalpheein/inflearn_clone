@@ -30,31 +30,39 @@
             <tr>
                 <td>
                     {% if board_contents.lecture_title1 %}
-                        {{ board_contents.lecture_title1 }}
+                        <a href="{% url 'show_lecture' pk=board_contents.pk %}">
+                            {{ board_contents.lecture_title1 }}
+                        </a>
                     {% endif %}
-                        </td>
+                </td>
             </tr>
             <tr>
                 <td>
                     {% if board_contents.lecture_title2 %}
-                        {{ board_contents.lecture_title2 }}
-                    {% endif %}
+                        <a href="{% url 'show_lecture' pk=board_contents.pk %}">
+                            {{ board_contents.lecture_title2 }}
+                        </a>
+                        {% endif %}
                     </td>
             </tr>
             <tr>
                 <td>
                     {% if board_contents.lecture_title3 %}
-                        {{ board_contents.lecture_title3 }}
-                    {% endif %}
+                        <a href="{% url 'show_lecture' pk=board_contents.pk %}">
+                            {{ board_contents.lecture_title3 }}
+                        </a>
+                        {% endif %}
                     
                 </td>
             </tr>
             <tr>
                 <td>
                     {% if board_contents.lecture_title4 %}
-                        {{ board_contents.lecture_title4 }}
-                    {% endif %}
-            </td>
+                        <a href="{% url 'show_lecture' pk=board_contents.pk %}">
+                            {{ board_contents.lecture_title4 }}
+                        </a>
+                        {% endif %}
+                </td>
             </tr>
         </table>
     </div>
