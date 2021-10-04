@@ -17,6 +17,17 @@ class myText(models.Model):
     category = models.CharField(max_length=200, null=True)
 
 
+    lecture_title1 = models.CharField(max_length=200, null=True)
+    lecture_video1 = models.CharField(max_length=800, null=True)
+    lecture_title2 = models.CharField(max_length=200, null=True)
+    lecture_video2 = models.CharField(max_length=800, null=True)
+    lecture_title3 = models.CharField(max_length=200, null=True)
+    lecture_video3 = models.CharField(max_length=800, null=True)
+    lecture_title4 = models.CharField(max_length=200, null=True)
+    lecture_video4 = models.CharField(max_length=800, null=True)
+
+
+
     def __str__(self):
         return self.title
     

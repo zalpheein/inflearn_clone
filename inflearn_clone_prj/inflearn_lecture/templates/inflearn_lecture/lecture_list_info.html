@@ -9,11 +9,60 @@
         }
     </style>
  
+
+    <!-- 상세 페이지 내용 영역 -->
     <div class="contents">
         {{ board_contents.board_text | safe }}
 
     </div>
 
+
+    <!-- 강의 리스트 영역 -->
+    <div>
+        <style>
+            tr {
+                border: 1px solid gray;
+                padding: 10px;
+                background-color: lightgray;
+            }
+        </style>
+        <table style="width: 500px; margin: auto;">
+            <tr>
+                <td>
+                    {% if board_contents.lecture_title1 %}
+                        {{ board_contents.lecture_title1 }}
+                    {% endif %}
+                        </td>
+            </tr>
+            <tr>
+                <td>
+                    {% if board_contents.lecture_title2 %}
+                        {{ board_contents.lecture_title2 }}
+                    {% endif %}
+                    </td>
+            </tr>
+            <tr>
+                <td>
+                    {% if board_contents.lecture_title3 %}
+                        {{ board_contents.lecture_title3 }}
+                    {% endif %}
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% if board_contents.lecture_title4 %}
+                        {{ board_contents.lecture_title4 }}
+                    {% endif %}
+            </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <!-- 댓글 작성 영역 -->
     <div style="width: 800px; margin: auto;" >
         <form method="POST" action="{% url 'lecture_list_info' pk=board_contents.pk %}">{% csrf_token %}
             <div class="form-group row">
@@ -46,6 +95,11 @@
         </form>
     </div>
 
+
+
+
+
+    <!-- 댓글 영역 -->
     <div style="width: 800px; margin: auto; padding: 10px;">
         {% for comment in comments %}
             <div style="border: 1px solid gray; border-radius: 10px;">
