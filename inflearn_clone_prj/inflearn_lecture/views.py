@@ -27,6 +27,13 @@ def lecture_list_info(request, pk):
     board_contents = get_object_or_404(myText, pk=pk)
     print("lecture_list_info() : ", board_contents)
 
+    comments = Comment.objects.filter(lecture=board_contents)
+    print('Comments : ', comments)
+
+    if request.user.is_authenticated:
+        print('이게 뭘까?')
+        print(request.user.username)
+
     if request.method == "POST":
         rate = request.POST['rate']
         writer = request.POST['writer']
@@ -40,7 +47,8 @@ def lecture_list_info(request, pk):
         return redirect('/lecture_list/' + str(pk))
 
     return render(request, 'inflearn_lecture/lecture_list_info.html', {
-        'board_contents': board_contents
+        'board_contents': board_contents, 
+        'comments': comments,
     })
 
 
