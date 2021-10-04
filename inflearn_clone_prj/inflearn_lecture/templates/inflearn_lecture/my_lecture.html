@@ -1,0 +1,18 @@
+{% extends 'inflearn_lecture/base.html' %}
+
+{% block content %}
+
+    <div class="row">
+        {% for lecture in lectures %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                            <img src="{{ text.img_url}}" alt="...">
+                            <div class="caption">
+                                <h3>{{ text.title}}</h3>
+                            </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

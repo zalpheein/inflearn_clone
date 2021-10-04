@@ -83,6 +83,17 @@ def create_lecture(request):
     })
 
 
+
+def my_lecture(request):
+    
+    print(request.user)
+    lectures = myText.objects.filter(author=request.user)
+
+    return render(request, 'inflearn_lecture/my_lecture.html', {
+        'lectures': lectures,
+    })
+
+
 def comment_remove(request, pk):
     
     if request.method == "POST":

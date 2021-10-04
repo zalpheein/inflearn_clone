@@ -3,7 +3,7 @@ from .models import myText, Comment
 
 
 class myTextadmin(admin.ModelAdmin):
-    list_display = ('pk', 'title')
+    list_display = ('pk', 'title', 'author')
 
 admin.site.register(myText, myTextadmin)
 
