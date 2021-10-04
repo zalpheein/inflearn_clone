@@ -62,6 +62,10 @@ def show_lecture(request, pk):
     })
 
 
+def create_lecture(request):
+    
+    return render(request, 'inflearn_lecture/create_lecture.html')
+
 
 def comment_remove(request, pk):
     
