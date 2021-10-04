@@ -67,6 +67,15 @@ def show_lecture(request, pk):
 
 def create_lecture(request):
     
+    if request.method == "POST":
+        form = LectureForm(request.POST)
+        if form.is_valid():
+            myText = form.save(commit=False)
+            myText.author = request.user
+            myText.save()
+
+            return redirect('/')
+
     lecture_form = LectureForm()
 
     return render(request, 'inflearn_lecture/create_lecture.html', {
