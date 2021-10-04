@@ -1,7 +1,7 @@
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import myText
+from .models import myText, Comment
 
 def home_list(request):
 
@@ -25,7 +25,19 @@ def lecture_list(request):
 def lecture_list_info(request, pk):
 
     board_contents = get_object_or_404(myText, pk=pk)
-    print(board_contents)
+    print("lecture_list_info() : ", board_contents)
+
+    if request.method == "POST":
+        rate = request.POST['rate']
+        writer = request.POST['writer']
+        comment = request.POST['comment']
+
+        Comment.objects.create(lecture=board_contents, 
+                                rate=rate, 
+                                writer=writer, 
+                                comment=comment)
+
+        return redirect('/lecture_list/' + str(pk))
 
     return render(request, 'inflearn_lecture/lecture_list_info.html', {
         'board_contents': board_contents

@@ -32,7 +32,7 @@ class Comment(models.Model):
     comment = models.CharField(max_length=200, null=True)
 
     def __str__(self):
-        return self.title
+        return self.comment
 
     def publish(self):
         self.save()
