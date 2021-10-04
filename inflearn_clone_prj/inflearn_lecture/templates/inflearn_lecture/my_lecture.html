@@ -6,10 +6,12 @@
         {% for lecture in lectures %}
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
+                        <a href="{% url 'my_lecture' %}">
                             <img src="{{ text.img_url}}" alt="...">
                             <div class="caption">
                                 <h3>{{ lecture.title }}</h3>
                             </div>
+                        </a>
                     </div>
                 </div>
         {% endfor %}
