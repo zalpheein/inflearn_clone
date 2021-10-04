@@ -2,6 +2,9 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import myText, Comment
+from .form import LectureForm
+
+
 
 def home_list(request):
 
@@ -64,7 +67,11 @@ def show_lecture(request, pk):
 
 def create_lecture(request):
     
-    return render(request, 'inflearn_lecture/create_lecture.html')
+    lecture_form = LectureForm()
+
+    return render(request, 'inflearn_lecture/create_lecture.html', {
+        'lecture_form': lecture_form,
+    })
 
 
 def comment_remove(request, pk):
