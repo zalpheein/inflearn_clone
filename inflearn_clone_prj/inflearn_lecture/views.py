@@ -1,5 +1,6 @@
 from django.contrib import auth
 from django.contrib.auth.models import User
+from django.http import request
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import myText, Comment
 from .form import LectureForm
@@ -84,15 +85,27 @@ def create_lecture(request):
     })
 
 
-def edit_lecture(reqauest, pk):
+def edit_lecture(request, pk):
     
     lecture = get_object_or_404(myText, pk=pk)
 
-    lecture_form = LectureForm(instance=lecture)
 
+    if request.method == "POST":
+        #lecture_form = LectureForm(request.POST, request.FILES, instance=lecture)
+        lecture_form = LectureForm(request.POST, instance=lecture)
+
+        if lecture_form.is_valid():
+            lec = lecture_form.save(commit=False)
+            lec.author = request.user
+            lec.save()
+
+            return redirect('/my_lecture')
+    else:
+        lecture_form = LectureForm(instance=lecture)
 
     return render(reqauest, 'inflearn_lecture/edit_lecture.html', {
         'lecture_form': lecture_form,
+        'primary_key': pk,
     })
 
 

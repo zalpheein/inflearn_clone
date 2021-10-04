@@ -4,7 +4,7 @@
 
     <div style="width: 700px; margin: auto; padding: 40px;" >
 
-        <form method="POST" action="{% url 'create_lecture' %}" enctype="multipart/form-data" >
+        <form method="POST" action="{% url 'edit_lecture' pk=primary_key %}" enctype="multipart/form-data" >
             {% csrf_token %}
             {{ lecture_form.as_p }}
 
