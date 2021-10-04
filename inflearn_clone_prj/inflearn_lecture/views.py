@@ -68,6 +68,7 @@ def show_lecture(request, pk):
 def create_lecture(request):
     
     if request.method == "POST":
+        #form = LectureForm(request.POST, request.FILES)
         form = LectureForm(request.POST)
         if form.is_valid():
             myText = form.save(commit=False)
@@ -79,6 +80,18 @@ def create_lecture(request):
     lecture_form = LectureForm()
 
     return render(request, 'inflearn_lecture/create_lecture.html', {
+        'lecture_form': lecture_form,
+    })
+
+
+def edit_lecture(reqauest, pk):
+    
+    lecture = get_object_or_404(myText, pk=pk)
+
+    lecture_form = LectureForm(instance=lecture)
+
+
+    return render(reqauest, 'inflearn_lecture/edit_lecture.html', {
         'lecture_form': lecture_form,
     })
 
